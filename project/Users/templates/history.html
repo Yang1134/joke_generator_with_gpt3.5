@@ -1,0 +1,692 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>History Page</title>
+    <link rel="shortcut icon" type="x-icon" href="{% static 'asset/image34435-e9f-200w.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p,
+        li,
+        ul,
+        pre,
+        div,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        figure,
+        blockquote,
+        figcaption {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            background-color: transparent;
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button,
+        select {
+            text-transform: none;
+        }
+
+        button,
+        [type="button"],
+        [type="reset"],
+        [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+        button::-moz-focus-inner,
+        [type="button"]::-moz-focus-inner,
+        [type="reset"]::-moz-focus-inner,
+        [type="submit"]::-moz-focus-inner {
+            border-style: none;
+            padding: 0;
+        }
+
+        button:-moz-focus,
+        [type="button"]:-moz-focus,
+        [type="reset"]:-moz-focus,
+        [type="submit"]:-moz-focus {
+            outline: 1px dotted ButtonText;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+    </style>
+    <style data-tag="default-style-sheet">
+        html {
+            font-family: Inter;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-theme-neutral-dark);
+            background-color: var(--dl-color-theme-neutral-light);
+
+            fill: var(--dl-color-theme-neutral-dark);
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
+</head>
+
+<body>
+    {% if user %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <div>
+        <link href="{% static 'css/history-page.css' %}" rel="stylesheet" />
+        <div class="history-page-container">
+            <div class="history-page-history-page">
+                <!-- sidebar -->
+                <!-- <img src="{% static 'asset/rectangle21279-vafl.svg' %}" alt="Rectangle21279"
+                    class="history-page-rectangle2" /> -->
+                <div class="history-page-rectangle2">
+                    <!-- Drawback icon -->
+                    <!-- <img src="{% static 'asset/chevronleftdouble1280-8vcl.svg' %}" alt="chevronleftdouble1280"
+                    class="history-page-chevronleftdouble" /> -->
+
+                    <!-- Current logged user profile image and username -->
+                    <div class="username-container">
+                        <img src="{{ user.profile_image.url }}" alt="User Profile" class="history-page-ellipse9" />
+                        <span class="history-page-text04">{{ user.username }}</span>
+                    </div>
+                    
+                    <!-- Navigation Links -->
+                    <span class="history-page-text06">
+                        <a href="{% url 'index' %}" class="history-link">Home</a>
+                    </span>
+                    <span class="history-page-text08">History</span>
+                    <span class="history-page-text09">
+                        <a href="{% url 'dashboard' %}" class="history-link">Dashboard</a>
+                    </span>
+                    <span class="history-page-text10">
+                        <a href="{% url 'usersettings' %}" class="history-link">Settings</a>
+                    </span>
+
+                    <!-- logout -->
+                    <div class="history-page-group13" onclick="showLogoutAlert()">
+                        <img src="{% static 'asset/rectangle491212-jvu.svg' %}" alt="Rectangle491212"
+                            class="history-page-rectangle49" />
+                        <img src="{% static 'asset/logout041212-f2ko.svg' %}" alt="logout041212"
+                            class="history-page-logout04" />
+                        <span class="history-page-text36">
+                            <a href="{% url 'logout' %}">Logout</a>
+                        </span>
+                        <script>
+                            function showLogoutAlert() {
+                                // Prevent default action of the div click
+                                event.preventDefault();
+                        
+                                // Show the confirmation dialog
+                                var userConfirmed = confirm("Are you sure you want to logout?");
+                        
+                                // If user confirms, redirect to the logout URL
+                                if (userConfirmed) {
+                                    window.location.href = "{% url 'logout' %}";
+                                }
+                                else{
+                                    window.location.href = "{% url 'history' %}";
+                                }
+                        }
+                        </script>
+
+                    </div>
+                </div>
+
+                
+                <!-- Current logged user profile image  -->
+                <!-- <img src="{{ user.profile_image.url }}" alt="Ellipse98631" class="history-page-ellipse9" /> -->
+
+                <!-- Current Logged user and list of Directories  -->
+                <!-- <span class="history-page-text04"><span>{{ user.username }}</span></span>
+                <span class="history-page-text06">
+                    <a href="{% url 'index' %}" class="history-link">Home</a>
+                </span>
+                <span class="history-page-text08"><span>History</span></span>
+                <span class="history-page-text10">
+                    <a href="{% url 'usersettings' %}" class="history-link">Settings</a>
+                </span> -->
+
+                <!-- main page -->
+                <!-- Grey vertical rectangle left of "History" text -->
+                <img src="{% static 'asset/rectangle41229-04z-200w.png' %}" alt="Rectangle41229"
+                    class="history-page-rectangle4" />
+                <span class="history-page-text"><span>History</span></span>
+
+                <!-- Search bar -->
+                <div class="history-page-search">
+                    <input type="search" id="search-bar" class="search-bar" placeholder="Search...">
+                    <button class="search-button">Search</button>
+                    <div id="loading-spinner" style="display: none;">🔄</div> <!-- Placeholder for loading spinner -->
+                </div>
+
+
+                <img src="{% static 'asset/rectangle81296-owf2.svg' %}" alt="Rectangle81296"
+                    class="history-page-rectangle8" />
+
+
+                <span class="history-page-text12"> Joke </span>
+                <span class="history-page-text13"> Actions </span>
+                <!-- <span class="history-page-text14"><span>Keyword</span></span> -->
+
+
+                <!--<ul id="historyList">
+
+                    
+                    {% for history in histories %}
+                    <li id="history-{{ history.id }}">
+                        <span class="history-page-text16">
+                            {{ history.description }} - {{ history.keyword }} -
+                        </span>
+                        
+                        <button type="button" onclick="showMoreInfo('{{ history.id }}')" class="history-page-text40">More Info</button>
+                        
+                        <button type="button"
+                            onclick="showModal('{{ history.id }}', '{{ history.description }}', '{{ history.keyword }}', '{{ history.status }}')">More
+                            Info</button>
+                        <button type="button" class="delete-button" data-id="{{ history.id }}">Delete</button>
+                         more info SAMPLE ONLY
+                        <div class="history-page-group14">
+                            <button type="button" onclick="showMoreInfo('{{ history.id }}')" class="history-page-text40">More Info</button>       
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul> -->
+
+                <table class="history-info-table" border="0">
+                    <tbody>
+                        <!-- History rows will be populated here -->
+                    </tbody>
+
+                    <!-- {% for history in histories %}
+                    <tr id="history-{{ history.id }}">
+                        <td>{{ history.description }}</td>
+                        <td>
+                            <button class=more-info-button type="button" onclick="showMoreInfo('{{ history.id }}')">More
+                                Info</button>
+                        </td>
+                        <td>
+                            <button class=delete-button type="button" data-id="{{ history.id }}"
+                                onclick="confirmDelete('{{ history.id }}')">Remove</button>
+                        </td>
+                    </tr>
+                    {% endfor %} -->
+                </table>
+                <script>
+                    let searchTimeout; // Timeout variable to debounce search input
+
+                    document.getElementById('search-bar').addEventListener('input', function() {
+                        clearTimeout(searchTimeout); // Clear the previous timeout
+                        document.getElementById('loading-spinner').style.display = 'none'; // Hide the spinner initially
+
+    // Set a timeout to delay the search function call by 2 seconds
+                        searchTimeout = setTimeout(() => {
+                            filterJokes();
+                        }, 2000);
+});
+                    function filterJokes() {
+                        const query = document.getElementById('search-bar').value.trim();
+                        document.getElementById('loading-spinner').style.display = 'inline-block'; // Show spinner
+                        document.getElementById('search-bar').disabled = true; // Disable the input field
+
+                        fetch(`/search-jokes/?q=${encodeURIComponent(query)}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                updateHistoryTable(data.histories);
+                                document.getElementById('loading-spinner').style.display = 'none';
+                                document.getElementById('search-bar').disabled = false; // Re-enable input field
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                                document.getElementById('loading-spinner').style.display = 'none';
+                                document.getElementById('search-bar').disabled = false; // Re-enable input field
+                            });
+                    }
+
+                    function updateHistoryTable(histories) {
+                        const historyTable = document.querySelector('.history-info-table tbody');
+                        historyTable.innerHTML = ''; // Clear current table content
+
+                        if (histories.length === 0) {
+                            historyTable.innerHTML = '<tr><td colspan="3">No histories found.</td></tr>'; // Adjust colspan if necessary
+                        } else {
+                            histories.forEach(history => {
+                                const row = document.createElement('tr');
+                                row.classList.add('history-info-row');  // Apply the blue bubble class to each row
+                                row.id = `history-${history.id}`;
+                                row.innerHTML = `
+                        <td>${history.description}</td>
+                        <td><button class="more-info-button" type="button" onclick="showMoreInfo('${history.id}')">More Info</button></td>
+                        <td><button class="delete-button" type="button" data-id="${history.id}" onclick="confirmDelete('${history.id}')">Remove</button></td>
+                    `;
+                                historyTable.appendChild(row);
+                            });
+                        }
+                    }
+                    document.addEventListener('DOMContentLoaded', filterJokes);
+
+
+
+                    function confirmDelete(historyId) {
+                        if (confirm("Are you sure you want to delete this history entry?")) {
+                            deleteHistory(historyId);
+                        }
+                    }
+
+                    function deleteHistory(historyId) {
+                        fetch('/delete-history/', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ id: historyId })
+                        })
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok');
+                                }
+                                return response.json();
+                            })
+                            .then(data => {
+                                if (data.message === 'History deleted successfully') {
+                                    document.getElementById('history-' + historyId).remove();
+                                } else {
+                                    alert(data.message);
+                                }
+                            })
+                            .catch(error => console.error('Error:', error));
+                    }
+                </script>
+
+
+                <!--<table class="history-info-table">
+                    {% for history in histories %}
+                    <tr id="history-{{ history.id }}" class="container-bg">
+                        <td>{{ history.description }}</td>
+                        <td>
+                            <button type="button" onclick="showMoreInfo('{{ history.id }}')">More Info</button>
+                            <button type="button" class="delete-button" data-id="{{ history.id }}">Delete</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>-->
+
+                <!-- popupfunction -->
+                <script>
+                    function showMoreInfo(historyId) {
+                        window.location.href = `/moreinfo/${historyId}/`;
+                    }
+                </script>
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <p>You are not logged in. <a href="{% url 'login' %}">Click here to login</a></p>
+
+    {% endif %}
+
+
+
+
+</body>
+
+</html>

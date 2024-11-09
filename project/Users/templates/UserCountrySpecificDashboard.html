@@ -1,0 +1,833 @@
+<!-- dashboard.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User's country specific Dashboard Page</title>
+    <link rel="shortcut icon" type="x-icon" href="{% static 'asset/image34435-e9f-200w.png' %}">
+    <script src="{% static 'js/chart.js' %}"></script>
+    <script src="{% static 'js/wordcloudplugin.js' %}"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Document</title> -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <style data-tag="reset-style-sheet">
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p,
+        li,
+        ul,
+        pre,
+        div,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        figure,
+        blockquote,
+        figcaption {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            background-color: transparent;
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button,
+        select {
+            text-transform: none;
+        }
+
+        button,
+        [type="button"],
+        [type="reset"],
+        [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+        button::-moz-focus-inner,
+        [type="button"]::-moz-focus-inner,
+        [type="reset"]::-moz-focus-inner,
+        [type="submit"]::-moz-focus-inner {
+            border-style: none;
+            padding: 0;
+        }
+
+        button:-moz-focus,
+        [type="button"]:-moz-focus,
+        [type="reset"]:-moz-focus,
+        [type="submit"]:-moz-focus {
+            outline: 1px dotted ButtonText;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+    </style>
+    <style data-tag="default-style-sheet">
+        html {
+            font-family: Inter;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-theme-neutral-dark);
+            background-color: var(--dl-color-theme-neutral-light);
+
+            fill: var(--dl-color-theme-neutral-dark);
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spinnaker:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
+
+<body>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% if user %}
+    <div>
+        <link href="{% static 'css/dashboard.css' %}" rel="stylesheet" />
+
+        <div class="adminuserdatabase-page-container">
+            <div class="adminuserdatabase-page-adminuserdatabase-page">
+
+                <!-- sidebar -->
+                <!-- <img src="{% static 'asset/rectangle21116-18s7.svg' %}" alt="Rectangle21116"
+                    class="adminuserdatabase-page-rectangle2" /> -->
+                <div class="adminuserdatabase-page-rectangle2">
+
+                    <!-- Drawback icon -->
+                    <!-- <img src="{% static 'asset/chevronleftdouble1116-ilfk.svg' %}" alt="chevronleftdouble1116"
+                        class="adminuserdatabase-page-chevronleftdouble" /> -->
+
+                    <!-- Current logged user profile image and username -->
+                    <div class="username-container">
+                        <img src="{{ user.profile_image.url }}" alt="Ellipse108632"
+                            class="adminuserdatabase-page-ellipse10" />
+                        <span class="adminuserdatabase-page-text04"><span>{{ user.username }}</span></span>
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <span class="adminuserdatabase-page-text06">
+                        <a href="{% url 'index' %}" class="database-link">Home</a>
+                    </span>
+                    <span class="adminuserdatabase-page-text08">
+                        <a href="{% url 'history' %}" class="database-link">History</a>
+
+                    </span>
+                    <span class="adminuserdatabase-page-text09"><span>Dashboard</span></span>
+
+                    <span class="adminuserdatabase-page-text10">
+                        <a href="{% url 'usersettings' %}">Settings</a>
+                    </span>
+
+
+                    <!-- logout -->
+                    <div class="adminuserdatabase-page-group13" onclick="showLogoutAlert()">
+                        <img src="{% static 'asset/rectangle491120-12xe.svg' %}" alt="Rectangle491120"
+                            class="adminuserdatabase-page-rectangle49" />
+                        <img src="{% static 'asset/logout041120-erbh.svg' %}" alt="logout041120"
+                            class="adminuserdatabase-page-logout04" />
+                        <span class="adminuserdatabase-page-text42">
+                            <a href="{% url 'logout' %}">Logout</a>
+                        </span>
+                        <script>
+                            function showLogoutAlert() {
+                                // Prevent default action of the div click
+                                event.preventDefault();
+
+                                // Show the confirmation dialog
+                                var userConfirmed = confirm("Are you sure you want to logout?");
+
+                                // If user confirms, redirect to the logout URL
+                                if (userConfirmed) {
+                                    window.location.href = "{% url 'logout' %}";
+                                }
+                                else {
+                                    window.location.href = "{% url 'dashboard' %}";
+                                }
+                            }
+                        </script>
+
+                    </div>
+                </div>
+
+                <!-- main page -->
+                <!-- Grey vertical rectangle left of "Settings" text-->
+                <img src="{% static 'asset/rectangle41229-04z-200w.png' %}" alt="Rectangle41229"
+                    class="adminuserdatabase-rectangle4" />
+                <span class="adminuserdatabase-page-text">
+                    <span>User's Dashboard</span>
+                </span>
+
+                <!-- <h1 class="adminuserdatabase-page-text01">{{ user.username }}'s Dashboard</h1> -->
+                <!-- <h1 class="users-country">{{ user.country }}'s History</h1> -->
+                <h1 class="users-country">
+                {% if user.country == "MY" %}
+                    Malaysia
+                {% elif user.country == "CN" %}
+                    China
+                {% elif user.country == "IN" %}
+                    India
+                {% elif user.country == "KR" %}
+                    South Korea
+                {% elif user.country == "QA" %}
+                    Qatar
+                {% else %}
+                    {{ user.country }}
+                {% endif %}
+                's Generated Joke Statistics</h1>
+
+                <div class="chart-container-top-jokes">
+                    <h2 class="top-rated-jokes-label">Top Rated Jokes</h2>
+                    <div id="historyTable"></div>
+                </div>
+
+                <!--<div id="averageStatusDisplay">-->
+                    <!--The average status will be displayed here-->
+                <div class="container">
+                    <h2 class = "your-jokes-label">Your Visualisation</h2>
+                    <!-- Row 1: Personal Jokes Average Rating and Personal Ratio of 5 Stars -->
+                    <div class="stat-card1">
+                        <div class="stat-header1">Average Rating</div>
+                        <div class="stat-content1">
+                            <div class="stat-circle1" id="statCircle"></div>
+                            <div class="stat-average" id="statAverage">{{ personal_average_status }}</div>
+                            
+                        </div>
+                    </div>
+
+                
+                    <div class="stat-card2">
+                        <div class="stat-header2">User Satisfaction</div>
+                        <div class="stat-content2">
+                            <div class="stat-circle2" id="personalRatioPercentage"></div>
+                            <div class="country-label-text">of the generated jokes received a 5-star rating</div>
+                            <div class = "star"> ⭐⭐⭐⭐⭐ </div>
+                            </div>
+                        </div>
+                    </div>
+
+        
+                <div class="container2">
+                    <h2 class = "other-jokes-label"> <span id="user-country"></span>&nbsp;General Visualisation</h2>
+                    <h3 class = "subhead">What do the people around you think?</h3>
+                    <!-- Row 1: Personal Jokes Average Rating and Personal Ratio of 5 Stars -->
+                    <div class="stat-card3">
+                        <div class="stat-header3">Average Rating</div>
+                        <div class="stat-content3">
+                            <div class="stat-circle3" id="statCircleC"></div>
+                            <div id="average_country-status"></div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card4">
+                        <div class="stat-header4">User Satisfaction</div>
+                        <div class="stat-content4">
+                            <div class="stat-circle4" id="country-ratio"></div>
+                            <div class="country-label-text">of the generated jokes received a 5-star rating</div>
+                            <div class = "star"> ⭐⭐⭐⭐⭐ </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!--<h1>personal jokes average {{ average_status }} personal ratio of 5 stars {{ personal_ratio }}</h1>
+
+                <p>your Country: <span id="user-country"></span></p>
+                <p>Average rating for your Country by your countrymen: <span id="average_country-status"></span></p>
+                <p>Your country percentage of 5 stars rated jokes by your countrymen: <span id="country-ratio"></span></p>-->
+
+                <script>
+                // Assuming personal_ratio is defined elsewhere in your script
+                const personalRatio = {{ personal_ratio }}; // Replace with your method to get the ratio
+                const percentage = Math.round(personalRatio * 100); // Convert to percentage
+
+                // Set the percentage in the designated element
+                document.getElementById('personalRatioPercentage').innerText = percentage + '%';
+                </script>
+                
+
+
+                <script>
+                    // Get the average status from your template (or dynamically)
+                    const averageStatus = {{ personal_average_status }};
+                    
+                    // Get the stat circle element
+                    const statCircle = document.getElementById('statCircle');
+                    const statAverage = document.getElementById('statAverage');
+                    statAverage.innerText = averageStatus.toFixed(1);
+                    
+                    // Apply different classes based on the average_status value
+                    if (averageStatus < 3) {
+                        statCircle.classList.add('stat-circle-red');  // Red for below 3
+                        statAverage.classList.add('stat-average-red');  // Red text for below 3
+                    } else if (averageStatus>=3 & averageStatus<=4) {
+                        statCircle.classList.add('stat-circle-yellow');  // Yellow for exactly 3
+                        statAverage.classList.add('stat-average-yellow');  // Yellow text for exactly 3
+                    } else {
+                        statCircle.classList.add('stat-circle-green');  // Green for above 3
+                        statAverage.classList.add('stat-average-green');  // Green text for above 3
+                    }
+
+                    function updateCountryStatus() {
+                        const averageCountryStatusElement = document.getElementById('average_country-status');
+                        const averageCountryStatus = parseFloat(averageCountryStatusElement.textContent);
+
+                        const statCircleC = document.getElementById('statCircleC');
+
+                        // Remove any previously added status classes
+                        statCircleC.classList.remove('stat-circle-red', 'stat-circle-yellow', 'stat-circle-green');
+                        averageCountryStatusElement.classList.remove('stat-average-red', 'stat-average-yellow', 'stat-average-green');
+
+                        // Update the displayed text to show 1 decimal place
+                        if (!isNaN(averageCountryStatus)) {
+                            averageCountryStatusElement.textContent = averageCountryStatus.toFixed(1);
+                        } else {
+                            console.error("Invalid average country status value");
+                        }
+
+                        // Apply different classes based on the averageCountryStatus value
+                        if (isNaN(averageCountryStatus)) {
+                            console.error("Invalid average country status value");
+                        } else if (averageCountryStatus < 3) {
+                            statCircleC.classList.add('stat-circle-red');  // Red for below 3
+                            averageCountryStatusElement.classList.add('stat-average-red');  // Red text for below 3
+                        } else if (averageCountryStatus >= 3 && averageCountryStatus < 4) {
+                            statCircleC.classList.add('stat-circle-yellow');  // Yellow for between 3 and 4
+                            averageCountryStatusElement.classList.add('stat-average-yellow');  // Yellow text for between 3 and 4
+                        } else {
+                            statCircleC.classList.add('stat-circle-green');  // Green for above 4
+                            averageCountryStatusElement.classList.add('stat-average-green');  // Green text for above 4
+                        }
+                    }
+
+                    /*function updateCountryStatus() {
+                        const averageCountryStatus = parseFloat(document.getElementById('average_country-status').textContent);
+                        const statCircleC = document.getElementById('statCircleC');
+
+                        // Remove any previously added status classes
+                        statCircleC.classList.remove('stat-circle-red', 'stat-circle-yellow', 'stat-circle-green');
+                        document.getElementById('average_country-status').classList.remove('stat-average-red', 'stat-average-yellow', 'stat-average-green');
+
+                        // Apply different classes based on the averageCountryStatus value
+                        if (isNaN(averageCountryStatus)) {
+                            console.error("Invalid average country status value");
+                        } else if (averageCountryStatus < 3) {
+                            statCircleC.classList.add('stat-circle-red');  // Red for below 3
+                            document.getElementById('average_country-status').classList.add('stat-average-red');  // Red text for below 3
+                        } else if (averageCountryStatus >= 3 && averageCountryStatus < 4) {
+                            statCircleC.classList.add('stat-circle-yellow');  // Yellow for between 3 and 4
+                            document.getElementById('average_country-status').classList.add('stat-average-yellow');  // Yellow text for between 3 and 4
+                        } else {
+                            statCircleC.classList.add('stat-circle-green');  // Green for above 4
+                            document.getElementById('average_country-status').classList.add('stat-average-green');  // Green text for above 4
+                        }
+                    }*/
+
+                    // Call the function every second (1000 milliseconds)
+                    setInterval(updateCountryStatus, 1000);
+
+                </script>
+
+                <script>
+                    function fetchAverageStatus() {
+                        fetch('/dashboard/api/average-status/')
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.error) {
+                                    console.error(data.error);
+                                } else {
+                                    document.getElementById('averageStatusDisplay').innerHTML = `<p>Average Status: ${data.average_status}</p>`;
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error fetching average status:', error);
+                            });
+                    }
+
+                    // Fetch average status every 5 seconds
+                    setInterval(fetchAverageStatus, 5000);
+
+                    // Initial fetch
+                    fetchAverageStatus();
+
+                    function fetchUserHistory() {
+                        fetch('/dashboard/api/user-history/')
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.error) {
+                                    console.error(data.error);
+                                } else {
+                                    displayHistory(data.history);
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error fetching user history:', error);
+                            });
+                    }
+
+            //         function displayHistory(history) {
+            //             const filteredHistory = history.filter(record => record.status === 5);
+            //             const tableHtml = `
+            //     <table>
+            //         <thead>
+            //             <tr>
+            //                 <th>ID</th>
+            //                 <th>Real History ID</th>
+            //                 <th>Description</th>
+            //                 <th>Offensive</th>
+            //                 <th>Status</th>
+            //             </tr>
+            //         </thead>
+            //         <tbody>
+            //             ${filteredHistory.map(record => `
+            //                 <tr>
+            //                     <td>${record.id}</td>
+            //                     <td>${record.realhistoryid}</td>
+            //                     <td>${record.description}</td>
+            //                     <td>${record.offensive}</td>
+            //                     <td>${record.status}</td>
+            //                 </tr>
+            //             `).join('')}
+            //         </tbody>
+            //     </table>
+            // `;
+            //             document.getElementById('historyTable').innerHTML = tableHtml;
+            //         }
+            </script>
+
+            <script>
+
+            function displayHistory(history) {
+                        const filteredHistory = history.filter(record => record.status === 5);
+                        const limitedHistory = filteredHistory.slice(0, 5); // Limit to first 5 rows
+                        const tableHtml = `
+                <table>
+                    <thead>
+                        <tr>
+                           
+                            <th class="table-header-description">Description</th>
+                            <th class="table-header-offensive">Offensive</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${limitedHistory.map(record => `
+                            <tr>
+                            <td colspan="3">
+                                <div class="table-row-bubble">
+                                    <div class="table-description">${record.description}</div>
+                                    <div class="table-offensive">
+                                    ${record.offensive === null ? '-' :
+                                      record.offensive === true ? 'Offensive' :
+                                      'Not Offensive'}
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+                        document.getElementById('historyTable').innerHTML = tableHtml;
+                    }
+
+                    fetchUserHistory();
+                    setInterval(fetchUserHistory, 5000);
+                    
+                    // Map country codes to full country names
+                    const countryMapping = {
+                        "MY": "Malaysia's",
+                        "CN": "China's",
+                        "IN": "India's",
+                        "KR": "South Korea's",
+                        "QA": "Qatar's"
+                    };
+                    function fetchCountrySpecificData() {
+                        fetch('/get-country-specific-data/')
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok');
+                                }
+                                return response.json();
+                            })
+                            .then(data => {
+                                if (data.error) {
+                                    // Handle error response
+                                    document.getElementById('error-message').textContent = data.error;
+                                } else {
+                                    // Get the full country name from the mapping
+                                    const fullCountryName = countryMapping[data.user_country] || data.user_country;
+                
+                                    // Update the page with the country-specific data
+                                    document.getElementById('user-country').textContent = fullCountryName;
+                                    document.getElementById('average_country-status').textContent = data.average_country_status ? data.average_country_status.toFixed(2) : 'N/A';
+                                    document.getElementById('country-ratio').textContent = Math.round(data.country_ratio * 100) + "%";
+                                }
+                            })
+                            .catch(error => {
+                                console.error('There was a problem with the fetch operation:', error);
+                            });
+                    }
+
+                    // Fetch data immediately on page load
+                    fetchCountrySpecificData();
+
+                    // Set an interval to fetch data every 10 seconds (30000 milliseconds)
+                    setInterval(fetchCountrySpecificData, 10000);
+                </script>
+
+
+            </div>
+            <!-- Add more dashboard content here -->
+            {% else %}
+            <h1>You are not logged in</h1>
+            <p>Please log in to access the dashboard.</p>
+            {% endif %}
+</body>
+
+</html>
